@@ -21,7 +21,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+a, button {
+   &:focus {
+     @apply outline-none;
+   }
+ 
+   &:focus-visible {
+     @apply outline outline-4 outline-offset-1 outline-violet-500;
+   }
+ }

@@ -37,7 +37,7 @@ export const Tabs = ({ items }: ITabsProps) => {
         </div>
       </div>
       <Bar text="Buy multiples original canine or human products" />
-      <div id={`panel-${activeTab}`} role="tabpanel" tabIndex={0} aria-labelledby={`tab-${activeTab}`}>
+      <div id={`panel-${activeTab}`} role="tabpanel" tabIndex={0} aria-labelledby={`tab-${activeTab}`} className="focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-1 focus-visible:outline-violet-500">
         {items[activeTab].content}
       </div>
     </>
