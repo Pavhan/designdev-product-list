@@ -21,9 +21,13 @@ module.exports = {
         "Helvetica Neue",
         "sans-serif",
       ],
+      nunito: ["Nunito"],
     },
     extend: {
       colors: {
+        "custom-yellow": {
+          100: "#FFE55A",
+        },
         "custom-orange": {
           100: "#FFFBF2",
           200: "#F8F3E9",

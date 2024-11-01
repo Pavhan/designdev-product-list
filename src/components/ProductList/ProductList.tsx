@@ -1,5 +1,6 @@
 import React from "react";
 import { IProduct, IProductImage, Product } from "../Product/Product";
+import { Container } from "../Container/Container";
 
 const productsImages: IProductImage[] = [
   { id: "1", width: 170, height: 273 },
@@ -37,8 +38,7 @@ export const ProductList = () => {
     return <div>Loading...</div>;
   }
   
-  return <div className="max-w-[1196px] mx-auto px-4">   
-    <h1 className="text-3xl font-bold underline">The Fab 4</h1>
+  return <Container>    
     <div className="grid grid-col-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {products.map((product) => {
         const image = productsImages.find(image => image.id === product.id);
@@ -48,5 +48,5 @@ export const ProductList = () => {
         );
       })}
     </div>
-  </div>;
+  </Container>;
 };

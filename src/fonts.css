@@ -26,10 +26,10 @@
 }
 
 @font-face {
-  font-family: "Raleway";
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 800;
   src: local("Raleway");
-  src: url("./fonts/Raleway/Raleway-ExtraBold.ttf") format("truetype");
+  src: url("./fonts/Nunito/Nunito-ExtraBold.ttf") format("truetype");
   font-display: swap;
 }
