@@ -2,10 +2,8 @@ import clsx from "clsx";
 import React from "react";
 import { Bar } from "../Bar/Bar";
 
-export type ITab = Record<string, { label: string; content: JSX.Element }>;
-
 interface ITabsProps {
-  items: ITab;
+  items: Record<string, { label: string; content: JSX.Element }>;
 }
 
 export const Tabs = ({ items }: ITabsProps) => {
@@ -23,7 +21,7 @@ export const Tabs = ({ items }: ITabsProps) => {
               key={key}
               onClick={() => setActiveTab(key)}
               className={clsx("-m-px rounded-button px-10 py-2 text-base", {
-                "block bg-gradient-to-l from-custom-orange-400 to-custom-orange-500 font-bold text-white shadow-tab hover:bg-gradient-to-r":
+                "block bg-gradient-to-l from-custom-orange-500 to-custom-orange-400 font-bold text-white shadow-tab hover:bg-gradient-to-r":
                 isActive,
                 "hover:underline": !isActive,
               })}
