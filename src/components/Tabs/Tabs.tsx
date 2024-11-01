@@ -13,12 +13,12 @@ export const Tabs = ({ items }: ITabsProps) => {
 
   return <>
     <div className="flex justify-center mb-10">
-      <div className="flex border border-custom-balck-100/20 rounded-[14px] gap-x-0.5">
+      <div className="flex border border-custom-balck-100/20 rounded-button gap-x-0.5">
         {Object.entries(items).map(([key, value]) =>
           <button 
             key={key} 
             onClick={() => setActiveTab(key)} 
-            className={clsx("text-base py-2 px-10 rounded-[14px] -m-px", 
+            className={clsx("text-base py-2 px-10 rounded-button -m-px", 
               { "bg-gradient-to-l from-custom-orange-400 to-custom-orange-500 block text-white font-bold hover:bg-gradient-to-r shadow-tab": activeTab === key,
                 "hover:underline": activeTab !== key,
               })

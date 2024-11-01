@@ -1,6 +1,7 @@
 import React from "react";
 import { IProduct, IProductImage, Product } from "../Product/Product";
 import { Container } from "../Container/Container";
+import { ProductsSkeleton } from "../Skeletons/Skeletons";
 
 const productsImages: IProductImage[] = [
   { id: "1", width: 170, height: 273 },
@@ -37,19 +38,18 @@ export const ProductList = ({ source } : IProps) => {
     });
   
   }, [source]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
   
   return <Container>
-    <div className="grid grid-col-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {products.map((product) => {
-        const image = productsImages.find(image => image.id === product.id);
-        return (
-          <Product key={product.id} image={image} {...product} />
-        );
-      })}
+    {loading ? <div className="grid grid-col-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ProductsSkeleton />
     </div>
-  </Container>;
+      : 
+      <div className="grid grid-col-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {products.map((product) => {
+          const image = productsImages.find(image => image.id === product.id);
+          return (
+            <Product key={product.id} image={image} {...product} />
+          );
+        })}
+      </div>}</Container>;
 };

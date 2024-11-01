@@ -46,10 +46,18 @@ module.exports = {
       },
       borderRadius: {
         "product": "20px",
+        "button": "14px",
       },
       boxShadow: {
         "product": "0 0 10px 0 rgba(0, 0, 0, 0.07)",
         "tab": "0 0 10px 0 rgba(0, 0, 0, 0.07)",
+      },
+    },
+    keyframes: {
+      shimmer: {
+        "100%": {
+          transform: "translateX(100%)",
+        },
       },
     },
   },
