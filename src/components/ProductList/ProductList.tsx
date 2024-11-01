@@ -9,7 +9,11 @@ const productsImages: IProductImage[] = [
   { id: "4", width: 187, height: 274 },
 ];
 
-export const ProductList = () => {
+interface IProps {
+  source: string;
+}
+
+export const ProductList = ({ source } : IProps) => {
   const [loading, setLoading] = React.useState(true);
   const [products, setProducts] = React.useState<IProduct[]>([]);
 
@@ -18,7 +22,7 @@ export const ProductList = () => {
       throw new Error("Please set you REACT_APP_FETCH_URL in .env.local");
     }
 
-    fetch(process.env.REACT_APP_FETCH_URL, {
+    fetch(`${process.env.REACT_APP_FETCH_URL}/${source}`, {
       method: "GET",
       headers: { "content-type":"application/json" },
     }).then(res => {
@@ -32,17 +36,16 @@ export const ProductList = () => {
       throw new Error("Failed to fetch products list");
     });
   
-  }, []);
+  }, [source]);
 
   if (loading) {
     return <div>Loading...</div>;
   }
   
-  return <Container>    
+  return <Container>
     <div className="grid grid-col-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {products.map((product) => {
         const image = productsImages.find(image => image.id === product.id);
-
         return (
           <Product key={product.id} image={image} {...product} />
         );

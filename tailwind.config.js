@@ -32,6 +32,8 @@ module.exports = {
           100: "#FFFBF2",
           200: "#F8F3E9",
           300: "#FFFFFF",
+          400: "#F89446",
+          500: "#F5B730",
         },
         "custom-black": {
           100: "#151515",
@@ -47,7 +49,7 @@ module.exports = {
       },
       boxShadow: {
         "product": "0 0 10px 0 rgba(0, 0, 0, 0.07)",
-        // "rating": "0 0 20px 0 rgba(0, 0, 0, 0.07)",
+        "tab": "0 0 10px 0 rgba(0, 0, 0, 0.07)",
       },
     },
   },

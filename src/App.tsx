@@ -1,15 +1,31 @@
 import React from "react";
 import { ProductList } from "./components/ProductList/ProductList";
-import { Bar } from "./components/Bar/Bar";
 import { Container } from "./components/Container/Container";
+import { Tabs } from "./components/Tabs/Tabs";
+
+
+export const SOURCE = {
+  "dogs": "products",
+  "humans": "products-humans",
+} as const;
+
+const tabs: Record<keyof typeof SOURCE, {label: string, content: JSX.Element}> = {
+  dogs: {
+    label: "For Dogs",
+    content:  <ProductList source={SOURCE.dogs} />,
+  },
+  "humans": {
+    label: "For Humans",
+    content:  <ProductList source={SOURCE.humans}/>,
+  },
+};
 
 function App() {
-  return <div className="text-custom-black py-[58px]">
+  return <div className="text-custom-black py-[58px] mb-10">
     <Container>
-      <h1 className="font-nunito text-[40px] leading-[56.56px] font-extrabold text-center mb-10">The Fab 4</h1>
+      <h1 className="font-nunito text-[40px] leading-[57px] font-extrabold text-center mb-10">The Fab 4</h1>
     </Container>
-    <Bar text="Buy multiples original canine or human products" />
-    <ProductList />
+    <Tabs items={tabs} />
   </div>;
 }
 

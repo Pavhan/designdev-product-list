@@ -29,7 +29,7 @@ export const Product = ({ id, name, description, rating, price, reviewsAmount, i
   </div>
   <div className="px-4 pb-4 pt-[21px]">
     <h2 className="text-2xl font-bold leading-7 line-clamp-1" title={name}>{name}</h2>
-    <p className="mt-4 font-medium text-lg leading-6 line-clamp-2">{description}</p>
+    <p className="mt-4 font-medium text-lg leading-6 line-clamp-2" title={description}>{description}</p>
     <div className="mt-4">
       <Rating value={rating} />
     </div>
