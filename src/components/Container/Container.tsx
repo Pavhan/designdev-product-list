@@ -4,6 +4,6 @@ interface IProps {
   children: React.ReactNode;
 }
 
-export const Container = ({ children }: IProps) => <div className="max-w-[1196px] mx-auto px-4">
-  {children}
-</div>;
+export const Container = ({ children }: IProps) => (
+  <div className="mx-auto max-w-[1196px] px-4">{children}</div>
+);

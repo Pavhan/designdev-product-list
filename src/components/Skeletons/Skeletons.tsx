@@ -8,21 +8,21 @@ export const ProductSkeleton = () => {
     <div
       className={`${shimmer} relative overflow-hidden rounded-product bg-gray-100 p-2 shadow-sm`}
     >
-      <div className="pt-2.5 pb-[5px] px-2.5 h-[278px] bg-gray-50"></div>
+      <div className="h-[278px] bg-gray-50 px-2.5 pb-[5px] pt-2.5"></div>
       <div className="flex flex-col rounded-product px-4 pb-4 pt-[21px]">
-        <div className="w-40 h-[28px] rounded-md bg-gray-50" />
-        <div className="mt-4 w-full h-[22px] rounded-md bg-gray-50" />
-        <div className="mt-1 w-full h-[22px] rounded-md bg-gray-50" />
-        <div className="mt-4 flex gap-x-[17px] flex-nowrap items-center">
-          <div className="w-[30px] h-[30px] rounded-md bg-gray-50" />
-          <div className="w-[30px] h-[30px] rounded-md bg-gray-50" />
-          <div className="w-[30px] h-[30px] rounded-md bg-gray-50" />
-          <div className="w-[30px] h-[30px] rounded-md bg-gray-50" />
-          <div className="w-[30px] h-[30px] rounded-md bg-gray-50" />
+        <div className="h-[28px] w-40 rounded-md bg-gray-50" />
+        <div className="mt-4 h-[22px] w-full rounded-md bg-gray-50" />
+        <div className="mt-1 h-[22px] w-full rounded-md bg-gray-50" />
+        <div className="mt-4 flex flex-nowrap items-center gap-x-[17px]">
+          <div className="h-[30px] w-[30px] rounded-md bg-gray-50" />
+          <div className="h-[30px] w-[30px] rounded-md bg-gray-50" />
+          <div className="h-[30px] w-[30px] rounded-md bg-gray-50" />
+          <div className="h-[30px] w-[30px] rounded-md bg-gray-50" />
+          <div className="h-[30px] w-[30px] rounded-md bg-gray-50" />
         </div>
-        <div className="mt-4 w-20 h-[16px] rounded-md bg-gray-50" />
-        <div className="mt-4 w-20 h-[28px] rounded-md bg-gray-50" />
-        <div className="mt-4 w-full h-10 rounded-md bg-gray-50" />
+        <div className="mt-4 h-[16px] w-20 rounded-md bg-gray-50" />
+        <div className="mt-4 h-[28px] w-20 rounded-md bg-gray-50" />
+        <div className="mt-4 h-10 w-full rounded-md bg-gray-50" />
       </div>
     </div>
   );

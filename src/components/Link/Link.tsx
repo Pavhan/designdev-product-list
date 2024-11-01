@@ -5,6 +5,11 @@ interface ILinkProps {
   text: string;
 }
 
-export const Link = ({ href, text }: ILinkProps) => 
-  <a href={href} className="text-custom-green-100 font-bold text-base leading-6 underline hover:no-underline inline-block">{text}</a>
-;
+export const Link = ({ href, text }: ILinkProps) => (
+  <a
+    href={href}
+    className="inline-block text-base font-bold leading-6 text-custom-green-100 underline hover:no-underline"
+  >
+    {text}
+  </a>
+);

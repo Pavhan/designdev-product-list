@@ -23,20 +23,43 @@ interface IProductWithImage extends IProduct {
   image?: IProductImage;
 }
 
-export const Product = ({ id, name, description, rating, price, reviewsAmount, image }: IProductWithImage) => <div className="shadow-product rounded-product bg-white flex-col flex">
-  <div className="rounded-product bg-gradient-to-br from-30% from-custom-orange-300 via-80% via-custom-orange-200 to-100% to-custom-orange-100 pt-2.5 pb-[5px] px-2.5 h-[278px] overflow-hidden flex justify-center">
-    <img src={`/images/image-${id}.png`} alt={name} width={image?.width || 0} height={image?.height || 0} className="max-h-full h-auto w-auto max-w-full" />
-  </div>
-  <div className="px-4 pb-4 pt-[21px] flex flex-col grow">
-    <h2 className="text-2xl font-bold leading-7 line-clamp-1" title={name}>{name}</h2>
-    <p className="mt-4 font-medium text-lg leading-6 line-clamp-2 grow" title={description}>{description}</p>
-    <div className="mt-4">
-      <Rating value={rating} />
+export const Product = ({
+  id,
+  name,
+  description,
+  rating,
+  price,
+  reviewsAmount,
+  image,
+}: IProductWithImage) => (
+  <div className="flex flex-col rounded-product bg-white shadow-product">
+    <div className="flex h-[278px] justify-center overflow-hidden rounded-product bg-gradient-to-br from-custom-orange-300 from-30% via-custom-orange-200 via-80% to-custom-orange-100 to-100% px-2.5 pb-[5px] pt-2.5">
+      <img
+        src={`/images/image-${id}.png`}
+        alt={name}
+        width={image?.width || 0}
+        height={image?.height || 0}
+        className="h-auto max-h-full w-auto max-w-full"
+      />
     </div>
-    <p className="mt-4">
-      <Link href="/reviews" text={`${reviewsAmount} reviews`} />
-    </p>
-    <p className="mt-4 text-2xl font-bold leading-7">{formatPrice(price)}</p>
-    <Button text="Add to Cart" />
+    <div className="flex grow flex-col px-4 pb-4 pt-[21px]">
+      <h2 className="line-clamp-1 text-2xl font-bold leading-7" title={name}>
+        {name}
+      </h2>
+      <p
+        className="mt-4 line-clamp-2 grow text-lg font-medium leading-6"
+        title={description}
+      >
+        {description}
+      </p>
+      <div className="mt-4">
+        <Rating value={rating} />
+      </div>
+      <p className="mt-4">
+        <Link href="/reviews" text={`${reviewsAmount} reviews`} />
+      </p>
+      <p className="mt-4 text-2xl font-bold leading-7">{formatPrice(price)}</p>
+      <Button text="Add to Cart" />
+    </div>
   </div>
-</div>;
+);
